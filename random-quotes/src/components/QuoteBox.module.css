@@ -1,0 +1,65 @@
+.quoteBox{
+    width: 50vw;
+    height: 40vh;
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quote{
+    height: calc(100% - 120px);
+    width: 90%;
+    border-radius: 30px 30px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote h1{
+    text-align: center;
+    margin: 0;
+}
+
+.quote h2{
+    text-align: end;
+    transform: translateX(100%);
+    font-size: 36px;
+    margin: 15px 0 0 0;
+}
+
+.buttonBox{
+    border-radius: 0 0 30px 30px;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.button{
+    height: 50px;
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-size: larger;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    transition: color 0.3s ease-in-out;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+.logo{
+    font-size: larger;
+}

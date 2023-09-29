@@ -1,5 +1,6 @@
 const initialState = {
-    quotes: []
+    color: "pink",
+    quote: { frase: "Frase placeholder ipsum dolor sit amet consectetur adipisicing elit.", autor: "Autor Placeholder" }
 }
 
 const rootReducer = (state=initialState, action) => {
