@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import style from './QuoteBox.module.css'
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {FaXTwitter} from 'react-icons/fa6'
+import { newQuote, randomizeColor } from '../redux/actions';
 
 function QuoteBox() {
+
+    const dispatch = useDispatch();
 
     const color = useSelector((state)=>state.color)
 
@@ -14,18 +17,35 @@ function QuoteBox() {
         color: "black"
     })
 
+    const [displayedQuote, setDisplayedQuote] = useState({
+        frase: "No se pudo cargar la frase",
+        autor: ":("
+    })
+
     useEffect(()=>{
         setButtonColor({
             borderColor: color,
             color: color
         })
     }, [color])
+
+    useEffect(()=>{
+        setDisplayedQuote({
+            frase: quote.frase,
+            autor: quote.autor
+        })
+    }, [quote])
+
+    const handleNewQuote = () =>{
+        dispatch(randomizeColor());
+        dispatch(newQuote())
+    }
     
     return (
         <div id="#quote-box" className={style.quoteBox}>
             <div className={style.quote}>
-                <h1>{quote.frase}</h1>
-                <h2>{quote.autor}</h2>
+                <h1 style={{color}}>{displayedQuote.frase}</h1>
+                <h2>{displayedQuote.autor}</h2>
             </div>
             <div className={style.buttonBox}>
                 <a href='#' style={{ textDecoration: 'none' }}>
@@ -33,7 +53,7 @@ function QuoteBox() {
                         <FaXTwitter className={style.logo} /> Share!
                     </button>
                 </a>
-                <button className={style.button} style={buttonColor}>
+                <button className={style.button} style={buttonColor} onClick={handleNewQuote}>
                     New Quote
                 </button>
             </div>

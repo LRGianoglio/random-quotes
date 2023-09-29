@@ -1,7 +1,5 @@
 .quoteBox{
     width: 50vw;
-    height: 40vh;
-    border: 1px solid black;
     border-radius: 30px;
     background-color: white;
     display: flex;
@@ -11,7 +9,7 @@
 
 .quote{
     height: calc(100% - 120px);
-    width: 90%;
+    width: 80%;
     border-radius: 30px 30px 0 0;
     display: flex;
     flex-direction: column;
@@ -20,15 +18,19 @@
 }
 
 .quote h1{
+    padding-top: 35px;
+    font-size: large;
     text-align: center;
     margin: 0;
+    transition: all 1s ease-in-out;
 }
 
 .quote h2{
     text-align: end;
-    transform: translateX(100%);
-    font-size: 36px;
+    font-size: larger;
+    width: 100%;
     margin: 15px 0 0 0;
+    color: darkgray;
 }
 
 .buttonBox{
@@ -47,13 +49,14 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    border: 3px solid black;
+    border: 3px solid darkgray;
     border-radius: 10px;
+    color: darkgray;
     font-size: larger;
-    text-decoration: none;
     font-weight: 700;
     font-family: Calibri, 'Trebuchet MS', sans-serif;
-    transition: color 0.3s ease-in-out;
+    transition: all 1s ease-in-out;
+    background-color: white;
 }
 
 .button:hover{

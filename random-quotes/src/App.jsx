@@ -9,10 +9,10 @@ function App() {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    background: color,
+    backgroundColor: color,
     width: '100vw',
     height: '100vh',
-    transition: 'color 0.3s ease-in-out'
+    transition: 'background 1s ease-in-out'
   };
 
   return (

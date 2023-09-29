@@ -1,3 +1,5 @@
+import { RANDOMIZE_COLOR, NEW_QUOTE } from "./types"
+
 const quotes = [
     { frase: "La vida es lo que pasa mientras estás ocupado haciendo otros planes.", autor: "John Lennon" },
     { frase: "El éxito es la capacidad de ir de fracaso en fracaso sin perder el entusiasmo.", autor: "Winston Churchill" },
@@ -34,12 +36,21 @@ const colors = [
     "#87CEEB",
 ]
 
-const funcionDeEjemplo = () =>{
+const randomizeColor = () =>{
+    const color = colors[Math.floor(Math.random() * colors.length)]
     return (dispatch) => {
-        dispatch({type: null, payload: filter})
+        dispatch({type: RANDOMIZE_COLOR, payload: color})
+    }
+}
+
+const newQuote = () =>{
+    const quote = quotes[Math.floor(Math.random() * quotes.length)]
+    return (dispatch) => {
+        dispatch({type: NEW_QUOTE, payload: quote})
     }
 }
 
 export {
-    funcionDeEjemplo
+ randomizeColor,
+ newQuote
 }
