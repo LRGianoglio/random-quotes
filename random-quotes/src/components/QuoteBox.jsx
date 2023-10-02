@@ -23,6 +23,11 @@ function QuoteBox() {
     })
 
     useEffect(()=>{
+        dispatch(randomizeColor());
+        dispatch(newQuote())
+    }, [])
+
+    useEffect(()=>{
         setButtonColor({
             borderColor: color,
             color: color
@@ -40,6 +45,8 @@ function QuoteBox() {
         dispatch(randomizeColor());
         dispatch(newQuote())
     }
+
+    const xLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(displayedQuote.frase + ' - ' + displayedQuote.autor+ '.')}`;
     
     return (
         <div id="#quote-box" className={style.quoteBox}>
@@ -48,7 +55,7 @@ function QuoteBox() {
                 <h2>{displayedQuote.autor}</h2>
             </div>
             <div className={style.buttonBox}>
-                <a href='#' style={{ textDecoration: 'none' }}>
+                <a href={xLink} target='_blank' style={{ textDecoration: 'none' }}>
                     <button className={`${style.button}`}>
                         <FaXTwitter className={style.logo} /> Share!
                     </button>

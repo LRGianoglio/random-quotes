@@ -1,5 +1,7 @@
 .quoteBox{
+    min-width: 500px;
     width: 50vw;
+    max-width: 700px;
     border-radius: 30px;
     background-color: white;
     display: flex;
@@ -19,7 +21,7 @@
 
 .quote h1{
     padding-top: 35px;
-    font-size: large;
+    font-size: 28px;
     text-align: center;
     margin: 0;
     transition: all 1s ease-in-out;
@@ -27,7 +29,7 @@
 
 .quote h2{
     text-align: end;
-    font-size: larger;
+    font-size: 32px;
     width: 100%;
     margin: 15px 0 0 0;
     color: darkgray;
